@@ -14,8 +14,6 @@ npm install
 npm run dev
 ```
 
-Después, abrir la dirección que muestre la terminal.
-
 ## Archivos principales
 
 - `app/page.tsx`: contenido y estructura de la página.
