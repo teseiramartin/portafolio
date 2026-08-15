@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Download, Moon, Sun, Mail, ExternalLink } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const technologies = [
   "React",
@@ -64,10 +66,11 @@ export default function Home() {
           <a href="#stack">Stack</a>
           <a href="#contacto">Contacto</a>
           <a className="cv-link" href="/Martin_Teseira_CV.pdf" download>
-            <span className="download-icon" aria-hidden="true">↓</span> CV
+            <Download size={16} aria-hidden="true" />
+            <span>Descargar CV</span>
           </a>
           <button className="theme-button" onClick={toggleTheme} aria-label="Cambiar tema">
-            {isHydrated ? (darkMode ? "☀" : "☾") : "☾"}
+            {isHydrated ? (darkMode ? <Moon size={16} /> : <Sun size={16} />) : <Moon size={16} />}
           </button>
         </nav>
       </header>
@@ -132,15 +135,13 @@ export default function Home() {
             <h3>ticketPass</h3>
             <p className="project-subtitle">Plataforma de venta y gestión de entradas para eventos.</p>
             <p>
-              Fui referente técnico del frontend en la web cliente y el manager. Participé en la
-              migración de React a Next.js, integraciones de pagos, sesiones seguras, fila virtual,
-              APIs REST y soporte de flujos críticos en producción.
+              Trabajé durante más de 5 años en la evolución del producto como Full Stack Developer, con foco en Frontend. Fui referente técnico de las aplicaciones web y participé en la migración de React a Next.js, integraciones de pagos, autenticación, APIs .NET y funcionalidades críticas en producción.
             </p>
-            <div className="tags"><span>React</span><span>Next.js</span><span>Redux</span><span>.NET</span><span>AWS</span></div>
+            <div className="tags"><span>React / Next.js</span><span>.NET</span><span>SQL Server</span><span>AWS</span></div>
             <div className="project-links">
-              <a href="https://www.ticketpass.com.ar/" target="_blank" rel="noreferrer">Web cliente ↗</a>
-              <a href="https://www.ticketpass.com.ar/producers" target="_blank" rel="noreferrer">Presentación manager ↗</a>
-              <a href="https://manager.ticketpass.com.ar/#/events" target="_blank" rel="noreferrer">Abrir manager ↗</a>
+              <a href="https://www.ticketpass.com.ar/" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Web cliente <ExternalLink size={12} /></a>
+              <a href="https://www.ticketpass.com.ar/producers" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Landing productoras <ExternalLink size={12} /></a>
+              <a href="https://manager.ticketpass.com.ar/#/events" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Web manager <ExternalLink size={12} /></a>
             </div>
           </div>
           <div className="project-visual" aria-hidden="true">
@@ -164,15 +165,13 @@ export default function Home() {
               <span className="project-label">PROYECTO PROFESIONAL ACTUAL</span>
               <span className="live-badge"><i /> EN DESARROLLO</span>
             </div>
-            <h3>PMHO · GISSO para SSR Mining</h3>
-            <p className="project-subtitle">Plataforma de monitoreo de higiene ocupacional.</p>
+            <h3>Panel de Higiene Ocupacional</h3>
+            <p className="project-subtitle">Plataforma de gestión desarrollada para SSR Mining.</p>
             <p>
-              Desarrollo módulos y mejoras de experiencia para la gestión de muestras químicas,
-              equipos, grupos de exposición similar, laboratorio, usuarios y reportes. También
-              participo en la integración de la landing pública y el flujo de acceso al manager.
+              Desarrollo funcionalidades frontend con Angular para digitalizar procesos de higiene ocupacional. Trabajo en módulos de muestras, laboratorio, equipos y reportes, creando componentes reutilizables e integrando las interfaces con las APIs del sistema.
             </p>
-            <div className="tags"><span>Angular 20</span><span>TypeScript</span><span>Signals</span><span>Tailwind CSS</span><span>Docker</span><span>Nginx</span></div>
-            <a className="inline-project-link" href="https://ssrmining.gisso.com.ar/samples?tab=chemical&site=1" target="_blank" rel="noreferrer">Visitar plataforma <span>↗</span></a>
+            <div className="tags"><span>Angular 20</span><span>TypeScript</span><span>Tailwind CSS</span><span>Docker</span></div>
+            <a className="inline-project-link" href="https://ssrmining.gisso.com.ar/samples?tab=chemical&site=1" target="_blank" rel="noreferrer">Visitar plataforma <ExternalLink size={16} /></a>
           </div>
           <div className="pmho-visual" aria-hidden="true">
             <div className="pmho-window">
@@ -188,8 +187,8 @@ export default function Home() {
         </article>
 
         <div className="project-grid">
-          <article className="project-card project-card-featured">
-            <div className="project-card-top"><span className="project-label">PROYECTO PERSONAL · PUBLICADO</span><span className="live-badge"><i /> LIVE</span></div>
+          <article className="project-card">
+            <div className="project-card-top"><span className="project-label">PROYECTO PERSONAL</span><span className="live-badge"><i /> LIVE</span></div>
             <div className="project-monogram">TG</div>
             <h3>TicketGenerator</h3>
             <p>
@@ -197,23 +196,45 @@ export default function Home() {
               una interfaz enfocada en la facilidad de uso.
             </p>
             <div className="tags"><span>React</span><span>TypeScript</span><span>Vercel</span></div>
-            <a className="card-link" href="https://ticket-flow-blond.vercel.app/" target="_blank" rel="noreferrer">Ver proyecto <span>↗</span></a>
+            <a className="card-link" href="https://ticket-flow-blond.vercel.app/" target="_blank" rel="noreferrer">Ver proyecto <ExternalLink size={16} /></a>
           </article>
 
           <article className="project-card">
-            <div className="project-card-top"><span className="project-label">LANDING · DEMO COMERCIAL</span><span className="project-status">PORTFOLIO</span></div>
-            <div className="project-monogram warm">GYM</div>
-            <h3>Landing para gimnasio</h3>
+            <div className="project-card-top">
+              <span className="project-label">
+                PROYECTO PARA CLIENTE
+              </span>
+              <span className="live-badge">
+                <i /> LIVE
+              </span>
+            </div>
+
+            <div className="project-monogram warm">BI</div>
+
+            <h3>Flexxus BI</h3>
+
             <p>
-              Sitio promocional con presentación de servicios, galería, animaciones, formulario de
-              contacto y acceso directo por WhatsApp.
+              Dashboard fiscal y comercial para una concesionaria de motos, desarrollado a partir de reportes de Power BI e integrado con una API .NET.
             </p>
-            <div className="tags"><span>React</span><span>Responsive</span><span>UX/UI</span></div>
-            <span className="card-note">Demo adaptable a distintos negocios</span>
+
+            <div className="tags">
+              <span>React 19</span>
+              <span>TypeScript</span>
+              <span>.NET</span>
+            </div>
+
+            <a
+              className="card-link"
+              href="https://flexxus-frontend.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver proyecto <ExternalLink size={16} />
+            </a>
           </article>
 
           <article className="project-card">
-            <div className="project-card-top"><span className="project-label">PROYECTO EN DESARROLLO</span><span className="project-status">UNITY</span></div>
+            <div className="project-card-top"><span className="project-label">PROYECTO PARA CLIENTE</span><span className="live-badge"><i /> EN DESARROLLO</span></div>
             <div className="project-monogram cyan">360°</div>
             <h3>Tour virtual para Salta Mining</h3>
             <p>
@@ -299,13 +320,13 @@ export default function Home() {
           <p>Estoy en San Salvador de Jujuy, Argentina, y abierto a oportunidades remotas o híbridas.</p>
           <div className="hero-actions">
             <a className="button primary" href="mailto:teseiramartin@gmail.com">Escribime <span>→</span></a>
-            <a className="button secondary" href="/Martin_Teseira_CV.pdf" download><span className="button-download-icon" aria-hidden="true">↓</span> Descargar CV</a>
+            <a className="button secondary" href="/Martin_Teseira_CV.pdf" download><Download size={16} /> <span>Descargar CV</span></a>
           </div>
         </div>
         <div className="contact-links">
-          <a href="https://github.com/teseiramartin" target="_blank" rel="noreferrer"><span>GitHub</span><b>github.com/teseiramartin</b><i>↗</i></a>
-          <a href="https://www.linkedin.com/in/martin-teseira" target="_blank" rel="noreferrer"><span>LinkedIn</span><b>linkedin.com/in/martin-teseira</b><i>↗</i></a>
-          <a href="mailto:teseiramartin@gmail.com"><span>Email</span><b>teseiramartin@gmail.com</b><i>→</i></a>
+          <a href="https://github.com/teseiramartin" target="_blank" rel="noreferrer"> <FaGithub size={20} /> <b>github.com/teseiramartin</b><i>↗</i></a>
+          <a href="https://www.linkedin.com/in/martin-teseira" target="_blank" rel="noreferrer"> <FaLinkedin size={20} /> <b>linkedin.com/in/martin-teseira</b><i>↗</i></a>
+          <a href="mailto:teseiramartin@gmail.com"> <Mail size={20} /><b>teseiramartin@gmail.com</b><i>→</i></a>
         </div>
       </section>
 
@@ -313,9 +334,9 @@ export default function Home() {
         <div className="section-shell footer-main">
           <a className="footer-brand" href="#inicio"><span className="brand-mark">MT</span><strong>Martin Teseira</strong></a>
           <div className="footer-links">
-            <a href="https://github.com/teseiramartin" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/martin-teseira" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="mailto:teseiramartin@gmail.com">Email</a>
+            <a href="https://github.com/teseiramartin" target="_blank" rel="noreferrer"><FaGithub size={20} /></a>
+            <a href="https://www.linkedin.com/in/martin-teseira" target="_blank" rel="noreferrer"><FaLinkedin size={20} /></a>
+            <a href="mailto:teseiramartin@gmail.com"><Mail size={20} /></a>
           </div>
         </div>
         <div className="section-shell footer-bottom"><span>© 2026 Martin Teseira</span><span>Full Stack Developer · San Salvador de Jujuy</span></div>
