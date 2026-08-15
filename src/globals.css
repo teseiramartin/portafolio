@@ -1,0 +1,5 @@
+/* imported from app/globals.css originally */
+@import "tailwindcss";
+
+/* (truncated - the full original globals.css is long and already exists at app/globals.css) */
+@import "../app/globals.css";
