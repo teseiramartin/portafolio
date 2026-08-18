@@ -1,6 +1,6 @@
 # Portfolio de Martin Teseira
 
-Portfolio profesional desarrollado con Next.js, React, TypeScript y Vinext.
+Portfolio profesional desarrollado con Next.js, React y TypeScript.
 
 ## Requisitos
 
