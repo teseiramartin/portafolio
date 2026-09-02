@@ -3,6 +3,22 @@
 import { useEffect, useState } from "react";
 import { Download, Moon, Sun, Mail, ExternalLink } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import ProjectGallery from "./project-gallery";
+
+const ticketPassShots = [
+  { src: "/assets/ticketPass-home.png", label: "Web cliente", alt: "ticketPass: buscador y catálogo de eventos con fechas, ubicaciones y compra de entradas." },
+  { src: "/assets/ticketPass-evento.png", label: "Entradas", alt: "Detalle de evento con selección de entradas, cantidades y resumen de compra." },
+  { src: "/assets/ticketPass-pago.png", label: "Pagos", alt: "Resumen de compra y selección de pago con Mercado Pago o transferencia." },
+  { src: "/assets/ticketPass-manager.png", label: "Manager", alt: "Administración de eventos con filtros, edición y acceso a planimetría." },
+  { src: "/assets/ticketPass-dashboard.png", label: "Dashboard", alt: "Dashboard de productoras con gráficos de ventas, invitaciones y reembolsos." },
+  { src: "/assets/ticketPass-mis-compras.png", label: "Mis compras", alt: "Historial de compras del cliente con detalle y estado de sus tickets." },
+];
+
+const gisShots = [
+  { src: "/assets/ssr-miming-muestras.png", label: "Muestras", alt: "GISSO: tabla de muestras físicas con categorías, estados y acciones en el entorno de test." },
+  { src: "/assets/ssr-miming-ges.png", label: "Grupos de exposición", alt: "Gestión de grupos de exposición similar con filtros, indicadores y clasificación de riesgos." },
+  { src: "/assets/ssr-mining-view-ges.png", label: "Indicadores", alt: "Detalle de un grupo de exposición con indicadores estadísticos y gráficos del entorno de test." },
+];
 
 const technologies = [
   "React",
@@ -125,7 +141,7 @@ export default function Home() {
 
       <section className="projects section-shell" id="proyectos">
         <div className="section-heading">
-          <div><span className="kicker">Trabajo destacado</span><h2>Productos en los que dejé huella</h2></div>
+          <div><span className="kicker">Trabajo destacado</span><h2>Proyectos y experiencia profesional</h2></div>
           <p>Experiencia profesional y proyectos propios, explicados desde el problema y el impacto.</p>
         </div>
 
@@ -135,65 +151,47 @@ export default function Home() {
             <h3>ticketPass</h3>
             <p className="project-subtitle">Plataforma de venta y gestión de entradas para eventos.</p>
             <p>
-              Trabajé durante más de 5 años en la evolución del producto como Full Stack Developer, con foco en Frontend. Fui referente técnico de las aplicaciones web y participé en la migración de React a Next.js, integraciones de pagos, autenticación, APIs .NET y funcionalidades críticas en producción.
+              Full Stack Developer y referente técnico Frontend durante más de 5 años. Trabajé en la web cliente y el manager, desde las interfaces hasta los flujos críticos de compra.
             </p>
+            <p><strong>Mi aporte:</strong> migración de React a Next.js, integración de Mercado Pago, autenticación y APIs con ASP.NET Core y Entity Framework Core.</p>
             <div className="tags"><span>React / Next.js</span><span>.NET</span><span>SQL Server</span><span>AWS</span></div>
             <div className="project-links">
               <a href="https://www.ticketpass.com.ar/" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Web cliente <ExternalLink size={12} /></a>
               <a href="https://www.ticketpass.com.ar/producers" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Landing productoras <ExternalLink size={12} /></a>
-              <a href="https://manager.ticketpass.com.ar/#/events" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Web manager <ExternalLink size={12} /></a>
             </div>
           </div>
-          <div className="project-visual" aria-hidden="true">
-            <div className="mini-browser">
-              <div className="mini-browser-bar"><i /><i /><i /><span>manager.ticketpass.com.ar</span></div>
-              <div className="dashboard-shell">
-                <aside><b>tp</b><span /><span /><span /><span /></aside>
-                <div className="dashboard-content">
-                  <div className="dashboard-top"><span>Eventos</span><button>+ Crear evento</button></div>
-                  <div className="metric-row"><span /><span /><span /></div>
-                  <div className="chart"><i /><i /><i /><i /><i /><i /><i /></div>
-                </div>
-              </div>
-            </div>
+          <ProjectGallery project="ticketPass" shots={ticketPassShots} />
+          <div className="project-case">
+            <div><span className="project-label">DESAFÍO EN PRODUCCIÓN</span><h4>Fila virtual para ventas de alta demanda</h4></div>
+            <p>Integré un proveedor de fila virtual, coordiné la implementación con el equipo y documenté el proceso. También participé en mejoras de sesión para evitar que se salteara la fila entre dispositivos.</p>
+            <p className="project-outcome"><strong>Resultado</strong> Mayor estabilidad de la plataforma durante eventos con miles de usuarios intentando comprar al mismo tiempo.</p>
           </div>
         </article>
 
         <article className="current-project">
           <div className="current-project-copy">
             <div className="project-meta-row">
-              <span className="project-label">PROYECTO PROFESIONAL ACTUAL</span>
-              <span className="live-badge"><i /> EN DESARROLLO</span>
+              <span className="project-label">EXPERIENCIA PROFESIONAL · GISSO / SSR MINING</span>
             </div>
             <h3>Panel de Higiene Ocupacional</h3>
             <p className="project-subtitle">Plataforma de gestión desarrollada para SSR Mining.</p>
             <p>
-              Desarrollo funcionalidades frontend con Angular para digitalizar procesos de higiene ocupacional. Trabajo en módulos de muestras, laboratorio, equipos y reportes, creando componentes reutilizables e integrando las interfaces con las APIs del sistema.
+              Desarrollé funcionalidades frontend con Angular para digitalizar procesos de higiene ocupacional: muestras, laboratorio, equipos y reportes.
             </p>
+            <p><strong>Mi aporte:</strong> tablas, formularios y componentes reutilizables conectados con las APIs del sistema, para centralizar la consulta y gestión de información.</p>
             <div className="tags"><span>Angular 20</span><span>TypeScript</span><span>Tailwind CSS</span><span>Docker</span></div>
-            <a className="inline-project-link" href="https://ssrmining.gisso.com.ar/samples?tab=chemical&site=1" target="_blank" rel="noreferrer">Visitar plataforma <ExternalLink size={16} /></a>
+            <p className="project-access">Plataforma privada · Capturas del entorno de test</p>
           </div>
-          <div className="pmho-visual" aria-hidden="true">
-            <div className="pmho-window">
-              <div className="pmho-sidebar"><b>G</b><i /><i /><i /><i /></div>
-              <div className="pmho-content">
-                <div className="pmho-header"><span>Muestras</span><small>Químicos</small></div>
-                <div className="pmho-tabs"><b>Químicos</b><span>Físicos</span><span>Ergonómicos</span></div>
-                <div className="pmho-summary"><i /><i /><i /></div>
-                <div className="pmho-table"><span /><span /><span /><span /><span /></div>
-              </div>
-            </div>
-          </div>
+          <ProjectGallery project="GISSO / SSR Mining" shots={gisShots} />
         </article>
 
         <div className="project-grid">
           <article className="project-card">
             <div className="project-card-top"><span className="project-label">PROYECTO PERSONAL</span><span className="live-badge"><i /> LIVE</span></div>
-            <div className="project-monogram">TG</div>
+            <ProjectGallery project="TicketGenerator" compact shots={[{ src: "/assets/ticketGenerator-ticketFlow.png", label: "Editor de tickets", alt: "TicketFlow: editor visual de tickets con plantilla, datos CSV, campos y código QR." }]} />
             <h3>TicketGenerator</h3>
             <p>
-              Aplicación web para crear y administrar tickets, con flujos simples, validaciones y
-              una interfaz enfocada en la facilidad de uso.
+              Desarrollé un generador de tickets con carga de plantillas y CSV, posicionamiento visual de campos y QR, y configuración de PDF. Un flujo guiado para preparar tickets en lote.
             </p>
             <div className="tags"><span>React</span><span>TypeScript</span><span>Vercel</span></div>
             <a className="card-link" href="https://ticket-flow-blond.vercel.app/" target="_blank" rel="noreferrer">Ver proyecto <ExternalLink size={16} /></a>
@@ -209,12 +207,12 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="project-monogram warm">BI</div>
+            <ProjectGallery project="Flexxus BI" compact shots={[{ src: "/assets/flexxus.png", label: "Resumen fiscal y comercial", alt: "Flexxus BI: indicadores de IVA, evolución mensual, comprobantes y filtros por período y sucursal." }]} />
 
             <h3>Flexxus BI</h3>
 
             <p>
-              Dashboard fiscal y comercial para una concesionaria de motos, desarrollado a partir de reportes de Power BI e integrado con una API .NET.
+              Desarrollé un dashboard fiscal y comercial para una concesionaria de motos a partir de reportes de Power BI. Integré una API .NET para consultar indicadores, gráficos y filtros desde una interfaz web.
             </p>
 
             <div className="tags">
@@ -234,15 +232,14 @@ export default function Home() {
           </article>
 
           <article className="project-card">
-            <div className="project-card-top"><span className="project-label">PROYECTO PARA CLIENTE</span><span className="live-badge"><i /> EN DESARROLLO</span></div>
-            <div className="project-monogram cyan">360°</div>
-            <h3>Tour virtual para Salta Mining</h3>
+            <div className="project-card-top"><span className="project-label">AGENT-AI</span><span className="live-badge"><i /> EN DESARROLLO</span></div>
+            <ProjectGallery project="Agent AI" compact shots={[{ src: "/assets/agent-ai.png", label: "Bandeja de conversaciones", alt: "Agent AI: bandeja de conversaciones con mensajes, atención por IA, asignación a operadores y prioridad." }]} />
+            <h3>Agent AI</h3>
             <p>
-              Aplicación Android offline para visor VR, con panoramas 360°, hotspots informativos y
-              navegación entre diferentes sectores del recorrido.
+              Desarrollo una plataforma de atención conversacional con IA y operadores humanos. Backoffice para gestionar conversaciones, asignaciones y prioridades, con backend .NET y separación de datos por empresa.
             </p>
-            <div className="tags"><span>Unity</span><span>Android</span><span>Google Cardboard</span></div>
-            <span className="card-note">4–5 panoramas · experiencia inmersiva</span>
+            <div className="tags"><span>Angular</span><span>.NET 10</span><span>SQL Server</span></div>
+            <span className="card-note">Full Stack · IA + atención humana</span>
           </article>
         </div>
       </section>
@@ -250,13 +247,13 @@ export default function Home() {
       <section className="experience-section" id="experiencia">
         <div className="section-shell">
           <div className="section-heading light-heading">
-            <div><span className="kicker">Caso de experiencia</span><h2>Construir para producción también es saber responder.</h2></div>
-            <p>En ticketPass trabajé sobre una plataforma donde estabilidad, seguridad y experiencia de compra tenían impacto directo en el negocio.</p>
+            <div><span className="kicker">Trayectoria</span><h2>Más de 5 años construyendo productos.</h2></div>
+            <p>Experiencia en desarrollo web y móvil, con foco en Frontend y participación en todo el ciclo de desarrollo.</p>
           </div>
 
           <div className="experience-grid">
             <article className="timeline-card">
-              <span className="timeline-year">2020—2026</span>
+              <span className="timeline-year">MAR 2020 — MAY 2026</span>
               <h3>Pinard Software e Innovación</h3>
               <p>Full Stack Developer · Referente técnico Frontend</p>
               <ul>
@@ -267,21 +264,15 @@ export default function Home() {
               </ul>
             </article>
 
-            <article className="case-card">
-              <span className="case-number">01</span>
-              <div>
-                <span className="project-label">DESAFÍO DESTACADO</span>
-                <h3>Fila virtual para ventas de alta demanda</h3>
-                <p>
-                  Participé en la integración de una cola virtual para regular picos de tráfico antes
-                  de que las solicitudes alcanzaran la base de datos. Además, reforcé el flujo con
-                  cookies firmadas y controles de sesión para reducir el uso indebido de tokens.
-                </p>
-                <div className="case-result">
-                  <strong>Resultado</strong>
-                  <span>Ventas más estables, carga controlada y un acceso más seguro durante eventos masivos.</span>
-                </div>
-              </div>
+            <article className="timeline-card education-card">
+              <span className="timeline-year">FORMACIÓN</span>
+              <h3>Analista Programador Universitario</h3>
+              <p>Universidad Nacional de Jujuy · Facultad de Ingeniería</p>
+              <ul>
+                <li>2012–2018 · Formación universitaria.</li>
+                <li>Inglés intermedio (B1), en formación continua.</li>
+                <li>Trabajo en equipo con GitFlow, Jira y metodologías ágiles.</li>
+              </ul>
             </article>
           </div>
         </div>
