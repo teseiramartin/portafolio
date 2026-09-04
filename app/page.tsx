@@ -297,7 +297,7 @@ export default function Home() {
           </div>
           <div className="stack-grid">
             <article><span className="stack-icon">FE</span><h3>Frontend</h3><p>React · Next.js · Angular · TypeScript · JavaScript · Tailwind CSS · Material UI · Redux</p></article>
-            <article><span className="stack-icon">BE</span><h3>Backend</h3><p>C# · ASP.NET Core · .NET · Entity Framework Core · APIs REST · Node.js</p></article>
+            <article><span className="stack-icon">BE</span><h3>Backend</h3><p>C# · ASP.NET Core · .NET · Entity Framework Core · APIs REST</p></article>
             <article><span className="stack-icon">DB</span><h3>Datos & Cloud</h3><p>SQL Server · MySQL · AWS S3 · EC2 · CloudWatch · Secrets Manager · Vercel</p></article>
             <article><span className="stack-icon">DX</span><h3>Flujo de trabajo</h3><p>Git · GitFlow · Jira · Postman · Figma · CI/CD · metodologías ágiles</p></article>
           </div>
