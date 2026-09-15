@@ -11,9 +11,12 @@
     "yarn:dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "start": "vite preview --host 0.0.0.0",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run typecheck && npm run build && npm run test:contact",
+    "test:contact": "node --experimental-strip-types --test tests/contact.test.mjs",
+    "typecheck": "tsc -p tsconfig.portfolio.json",
+    "format:check": "prettier --check app/components app/hooks app/i18n app/data app/services app/page.tsx app/project-gallery.tsx app/portfolio.css",
     "validate:artifact": "node -e \"console.log('Vite build artifact validation skipped; standard build output is used.')\"",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "lint": "eslint src app/components app/hooks app/i18n app/data app/services app/page.tsx app/project-gallery.tsx",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
@@ -32,9 +35,12 @@
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "prettier": "^3.6.2",
     "react-server-dom-webpack": "19.2.6",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
+    "typescript-eslint": "^8.59.3",
     "vite": "8.0.13",
     "wrangler": "4.92.0"
   },
