@@ -143,10 +143,6 @@ main {
   object-fit: cover;
   object-position: 55% 19%;
 }
-.profile-trigger img {
-  transform: scale(2.3);
-  transform-origin: 55% 19%;
-}
 .profile-trigger:hover {
   transform: scale(1.07);
   box-shadow: 0 0 0 6px color-mix(in srgb, var(--primary) 17%, transparent);
