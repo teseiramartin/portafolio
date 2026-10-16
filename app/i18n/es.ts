@@ -171,7 +171,7 @@ export const es = {
     title: "Más de 5 años construyendo productos.",
     intro:
       "Experiencia en desarrollo web y móvil, con foco en Frontend y participación en todo el ciclo de desarrollo.",
-    period: "MAR 2020 — MAY 2026",
+    period: "MAR 2020 — AGO 2026",
     role: "Full Stack Developer · Referente técnico Frontend",
     work: [
       "Migración de la web cliente desde React hacia Next.js.",

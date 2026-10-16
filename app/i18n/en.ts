@@ -173,7 +173,7 @@ export const en: Messages = {
     title: "Over 5 years building products.",
     intro:
       "Web and mobile development experience, focused on Frontend and contributing throughout the development lifecycle.",
-    period: "MAR 2020 — MAY 2026",
+    period: "MAR 2020 — AUG 2026",
     role: "Full Stack Developer · Frontend technical point of contact",
     work: [
       "Migrated the customer website from React to Next.js.",
